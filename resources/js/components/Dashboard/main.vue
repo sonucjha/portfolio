@@ -5,7 +5,7 @@
             <div class="d-flex align-items-center justify-content-between">
                 <a href="index.html" class="logo d-flex align-items-center">
                     <!-- <img src="../../../../public/dashboard_css/assets/img/logo.png" alt=""> -->
-                    <span class="d-none d-lg-block">Multi Vendor</span>
+                    <span class="d-none d-lg-block">Nabnit Profile</span>
                 </a>
             </div>
             <!-- End Logo -->
@@ -16,27 +16,8 @@
                 <ul class="d-flex align-items-center">
                     <!-- Start Profile Nav Icon -->
 
-                    <!-- <profile-nav
-                        :user_name="getLoginInfo.user.name"
-                        :user_role="getLoginInfo.user.role"
-                        v-if="getLoginInfo.user.role == 'admin'"
-                    />
-                    <profile-nav
-                        :user_name="getLoginInfo.student_info.full_name"
-                        :user_role="getLoginInfo.user.role"
-                        v-if="getLoginInfo.user.role == 'student'"
-                    />
-                    <profile-nav
-                        :user_name="getLoginInfo.teacher_info.full_name"
-                        :user_role="getLoginInfo.user.role"
-                        v-if="getLoginInfo.user.role == 'teacher'"
-                    />
-                    <profile-nav
-                        :user_name="getLoginInfo.parent_info.full_name"
-                        :user_role="getLoginInfo.user.role"
-                        v-if="getLoginInfo.user.role == 'parent'"
-                    /> -->
-                    
+                    <Navbar></Navbar>
+
                     <!-- End Profile Nav Icon -->
                 </ul>
             </nav>
@@ -48,10 +29,7 @@
         <aside id="sidebar" class="sidebar">
             <!-- Start Sidebar-->
 
-            <!-- <admin-sidebar v-if="getLoginInfo.user.role=='admin'"/>
-            <student-sidebar v-if="getLoginInfo.user.role=='student'"/>
-            <teacher-sidebar v-if="getLoginInfo.user.role=='teacher'"/>
-            <parent-sidebar v-if="getLoginInfo.user.role=='parent'"/> -->
+           <Sidebar></Sidebar>
 
             <!-- End Sidebar-->
         </aside>
@@ -62,7 +40,7 @@
                 <div
                     class="bd-callout bd-callout-info text-uppercase d-flex justify-content-between"
                 >
-                    <strong> {{ "Dashboard   " }}</strong>
+                    <strong> {{ "Dashboard " }}</strong>
                     <span class="text-capitalize">{{}}</span>
                 </div>
 
@@ -85,4 +63,8 @@
     </fragment>
 </template>
 
-<script></script>
+<script setup>
+import Navbar from "./Navbar.vue";
+import Footer from "./Footer.vue";
+import Sidebar from "../Sidebar/AdminSidebar.vue";
+</script>
