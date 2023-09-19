@@ -4,4 +4,6 @@
       <!-- <main-component></main-component> -->
     </div>
 </template>
-<script></script>
+<script>
+
+</script>
