@@ -3,9 +3,16 @@ import ProductList from './components/ProductList.vue';
 import ProductForm from './components/ProductForm.vue';
 import Product from './components/Product.vue';
 
+import BeforeLoginPage from "./components/BeforeLoginPage.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/before-login', 
+      name: 'before-login', 
+      component: BeforeLoginPage
+    },
     {
         path: '/product-list', 
         name: 'product-list', 
