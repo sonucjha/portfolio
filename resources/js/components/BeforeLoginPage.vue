@@ -12,7 +12,9 @@
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
         <li class="nav-item dropdown pe-3">
-           LOG IN
+          <a href="index.html" class="logo d-flex align-items-center w-auto">
+                <span class="d-none d-lg-block">Log In</span>
+              </a>
         </li>
         <!-- End Profile Nav -->
       </ul>
