@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-      <main-component></main-component>
+      <before-login-page></before-login-page>
+      <!-- <main-component></main-component> -->
     </div>
 </template>
 <script></script>
