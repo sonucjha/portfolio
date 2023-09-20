@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section hide-model">
     <div class="row">
       <div class="col-lg-6">
         <div class="card">
@@ -158,13 +158,15 @@ import { ref } from "vue";
 const show = ref(false);
 
 defineExpose({
-  doSomething(){
-  document.getElementById('login-btn').click();
-}
-})
+  doSomething() {
+    document.getElementById("login-btn").click();
+  },
+});
 </script>
 <style>
-.hide-model{
-  visibility: hidden;
+.hide-model {
+  position: absolute;
+  inset: 0;
+  display: grid;
 }
 </style>

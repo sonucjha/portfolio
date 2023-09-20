@@ -1,7 +1,6 @@
 <template>
-  <div style="margin-top:12rem;">
-    <login  ref="childComponentRef" ></login>
-  </div>
+  <login ref="childComponentRef"></login>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
@@ -65,14 +64,18 @@
 
 <script setup>
 import Login from "./Login.vue";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 const childComponentRef = ref(null);
+let showLogin = ref(false);
 
- function showModel(){
+function showModel() {
   childComponentRef.value.doSomething();
- }
+}
 
+watch(showLogin, async () => {
+  childComponentRef.value.doSomething();
+});
 </script>
 
 <style>
