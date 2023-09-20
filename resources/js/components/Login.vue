@@ -6,6 +6,7 @@
           <div class="card-body">
             <!-- Vertically centered Modal -->
             <button
+              id="login-btn"
               type="button"
               class="btn btn-primary"
               data-bs-toggle="modal"
@@ -151,3 +152,19 @@
     </div>
   </section>
 </template>
+<script setup>
+import { ref } from "vue";
+
+const show = ref(false);
+
+defineExpose({
+  doSomething(){
+  document.getElementById('login-btn').click();
+}
+})
+</script>
+<style>
+.hide-model{
+  visibility: hidden;
+}
+</style>

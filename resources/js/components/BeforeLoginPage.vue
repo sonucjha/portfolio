@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <login></login>
+  <div style="margin-top:12rem;">
+    <login  ref="childComponentRef" ></login>
   </div>
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
@@ -67,10 +67,10 @@
 import Login from "./Login.vue";
 import { ref } from "vue";
 
-const showLoginModel = ref(false);
+const childComponentRef = ref(null);
 
  function showModel(){
-  showLoginModel.value = true
+  childComponentRef.value.doSomething();
  }
 
 </script>
