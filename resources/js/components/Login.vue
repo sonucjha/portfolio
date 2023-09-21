@@ -36,7 +36,11 @@
                             ></button>
                           </div>
 
-                          <form class="row g-3 needs-validation" novalidate  @submit.prevent="signIn">
+                          <form
+                            class="row g-3 needs-validation"
+                            novalidate
+                            @submit.prevent="signIn"
+                          >
                             <div class="col-12">
                               <label for="yourUsername" class="form-label"
                                 >Username</label
@@ -50,7 +54,7 @@
                                   name="username"
                                   class="form-control"
                                   id="yourUsername"
-                                  v-model="userName" 
+                                  v-model="userName"
                                   required
                                 />
                                 <div class="invalid-feedback">
@@ -68,7 +72,7 @@
                                 name="password"
                                 class="form-control"
                                 id="yourPassword"
-                                v-model="userPassword" 
+                                v-model="userPassword"
                                 required
                               />
                               <div class="invalid-feedback">
@@ -119,18 +123,28 @@
 </template>
 <script setup>
 import { ref } from "vue";
+import axios from "axios";
 
 const show = ref(false);
-const userName = ref('')
-const userPassword = ref('')
+const userName = ref("");
+const userPassword = ref("");
 
 defineExpose({
   doSomething() {
     document.getElementById("login-btn").click();
   },
 });
-function signIn(){
- 
+async function signIn() {
+  let formData = {
+    email: userName.value,
+    password: userPassword.value,
+  };
+  let postResponse = await axios
+    .post("http://127.0.0.1:8000/api/auth/login", formData)
+    .then((response) => {
+      return response;
+    });
+  debugger;
 }
 </script>
 <style>

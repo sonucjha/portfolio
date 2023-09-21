@@ -31,9 +31,9 @@
 <body class="animsition">
     <div class="page-wrapper"></div>
 
-    <script src="{{ asset('BackEnd/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+    <!-- <script src="{{ asset('BackEnd/assets/vendor/apexcharts/apexcharts.min.js') }}"></script> -->
     <script src="{{ asset('BackEnd/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('BackEnd/assets/vendor/chart.js/chart.js') }}"></script>
+    <!-- <script src="{{ asset('BackEnd/assets/vendor/chart.js/chart.js') }}"></script> -->
     <script src="{{ asset('BackEnd/assets/vendor/echarts/echarts.min.js') }}"></script>
     <script src="{{ asset('BackEnd/assets/vendor/quill/quill.min.js') }}"></script>
     <script src="{{ asset('BackEnd/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
