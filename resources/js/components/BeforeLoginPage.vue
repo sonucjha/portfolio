@@ -6,7 +6,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="" />
-        <span class="d-none d-lg-block">NiceAdmin</span>
+        <span class="d-none d-lg-block">Nabnit Jha</span>
       </a>
     </div>
     <!-- End Logo -->
