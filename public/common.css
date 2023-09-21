@@ -6,3 +6,18 @@
  .noshadow{
     box-shadow: 0px 0 0px!important;
  }
+
+ .cardheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8%;
+    border-bottom: 2px solid #4e4e4e45;
+ }
+
+ .btn-close{
+    font-size: 24px;
+    background-color: #dee2e6;
+    color: #ffff;
+    border-radius: 50%;
+ }

@@ -24,13 +24,16 @@
                     >
                       <div class="card mb-3 noshadow">
                         <div class="card-body">
-                          <div class="pt-4 pb-2">
-                            <h5 class="card-title text-center pb-0 fs-4">
+                          <div class="pt-4 pb-2 cardheader">
+                            <h5 class="card-title text-center pb-0 fs-4 d-flex">
                               Login to Your Account
                             </h5>
-                            <p class="text-center small">
-                              Enter your username & password to login
-                            </p>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
                           </div>
 
                           <form class="row g-3 needs-validation" novalidate>
