@@ -144,7 +144,6 @@ async function signIn() {
     .then((response) => {
       return response;
     });
-  debugger;
 }
 </script>
 <style>
