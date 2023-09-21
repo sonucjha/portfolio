@@ -36,7 +36,7 @@
                             ></button>
                           </div>
 
-                          <form class="row g-3 needs-validation" novalidate>
+                          <form class="row g-3 needs-validation" novalidate  @submit.prevent="signIn">
                             <div class="col-12">
                               <label for="yourUsername" class="form-label"
                                 >Username</label
@@ -50,6 +50,7 @@
                                   name="username"
                                   class="form-control"
                                   id="yourUsername"
+                                  v-model="userName" 
                                   required
                                 />
                                 <div class="invalid-feedback">
@@ -67,6 +68,7 @@
                                 name="password"
                                 class="form-control"
                                 id="yourPassword"
+                                v-model="userPassword" 
                                 required
                               />
                               <div class="invalid-feedback">
@@ -119,12 +121,17 @@
 import { ref } from "vue";
 
 const show = ref(false);
+const userName = ref('')
+const userPassword = ref('')
 
 defineExpose({
   doSomething() {
     document.getElementById("login-btn").click();
   },
 });
+function signIn(){
+ 
+}
 </script>
 <style>
 .hide-model {
