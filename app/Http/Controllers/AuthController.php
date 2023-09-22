@@ -8,15 +8,12 @@ use App\Http\Resources\LoginResource;
 
 class AuthController extends Controller
 {
-    /**
-     * Create a new AuthController instance.
-     *
-     * @return void
-     */
-    private $loginResource;
+
+    public $login_Resource;
+
     public function __construct()
     {
-        $this->loginResource = new LoginResource(array());
+        $this->login_Resource = new LoginResource(array());
         $this->middleware('auth:api', ['except' => ['login']]);
 
     }
@@ -35,10 +32,10 @@ class AuthController extends Controller
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        $user = $this->LoginResource($this->guard()->user());
-           
+        // $user = $this->login_Resource(auth()->guard('api')->user());
+        $user = auth()->guard('api')->user();
         $token_type = 'bearer';
-        $expires_in = $this->guard()->factory()->getTTL() * 60;
+        $expires_in = auth()->guard()->factory()->getTTL() * 60;
         $message = 'login successfully';
 
         return response()->json(compact('token', 'token_type', 'expires_in', 'user', 'message'));

@@ -147,10 +147,11 @@ async function signIn() {
   let postResponse = await axios
     .post("http://127.0.0.1:8000/api/auth/login", formData)
     .then((response) => {
+      debugger;
       return response.data;
     });
 
-  login_store.setLoginInfo(postResponse.access_token);
+  login_store.setLoginInfo(postResponse);
 
   let x = login_store.getLoginInfo;
 }

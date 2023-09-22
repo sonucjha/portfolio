@@ -16,10 +16,10 @@ class LoginResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "name" => $this->first_name . ' ' .$this->last_name,
+            "name" => $this->name,
+            "username" => $this->username,
             "email" => $this->email,
-            
-            "active_status" => (bool) $this->user_status,
+            "phone" => $this->phone,
             "created_at" => $this->created_at->format("M d, Y H:i A"),
             "updated_at" => $this->updated_at->format("M d, Y H:i A")
         ];
