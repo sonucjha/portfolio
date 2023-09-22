@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\LoginResource;
 
 class AuthController extends Controller
 {
@@ -12,10 +13,14 @@ class AuthController extends Controller
      *
      * @return void
      */
+    private $loginResource;
     public function __construct()
     {
+        $this->loginResource = new LoginResource(array());
         $this->middleware('auth:api', ['except' => ['login']]);
+
     }
+
 
     /**
      * Get a JWT via given credentials.
@@ -30,7 +35,13 @@ class AuthController extends Controller
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        return $this->respondWithToken($token);
+        $user = $this->LoginResource($this->guard()->user());
+           
+        $token_type = 'bearer';
+        $expires_in = $this->guard()->factory()->getTTL() * 60;
+        $message = 'login successfully';
+
+        return response()->json(compact('token', 'token_type', 'expires_in', 'user', 'message'));
     }
 
     /**
