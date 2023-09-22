@@ -122,18 +122,23 @@
   </section>
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import axios from "axios";
+import { loginInfoStore } from "../stores/login_info";
+import { mapState, mapActions } from "pinia";
 
 const show = ref(false);
 const userName = ref("");
 const userPassword = ref("");
+
+const login_store = loginInfoStore();
 
 defineExpose({
   doSomething() {
     document.getElementById("login-btn").click();
   },
 });
+
 async function signIn() {
   let formData = {
     email: userName.value,
@@ -142,8 +147,12 @@ async function signIn() {
   let postResponse = await axios
     .post("http://127.0.0.1:8000/api/auth/login", formData)
     .then((response) => {
-      return response;
+      return response.data;
     });
+
+  login_store.setLoginInfo(postResponse.access_token);
+
+  let x = login_store.getLoginInfo;
 }
 </script>
 <style>
