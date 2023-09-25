@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class IntroModel extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'position',
+        'social',
+    ];
 }

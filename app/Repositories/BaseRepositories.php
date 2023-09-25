@@ -36,42 +36,14 @@ class BaseRepository
         return $data;
     }
 
-    public function fetchAll($allowPagination)
-    {
-        try {
-            if (str_contains($allowPagination, 'true')) {
-                $data = $this->Model::paginate();
-            } else {
-                $data = $this->Model::get();
-            }
-        } catch (Exception $exception) {
-            throw $exception;
-        }
-        return $data;
-    }
-
-    public function store($request,?callable $callback = null)
+    public function store($request)
     {
         DB::beginTransaction();
 
         $Model = $this->model();
 
         try {
-            foreach ($request as $key => $value) {
-                if ($key === 'password') {
-                    $Model->$key = bcrypt($value);
-                } else {
-                    $Model->$key = $value;
-                }
-            }
-            if (!$Model->save()) {
-                return 'failed';
-            }
-
-            if ($callback) {
-                $callback($Model);
-            }
-
+            $Model->create($request);
         } catch (Exception $exception) {
             throw $exception;
         }
@@ -81,20 +53,11 @@ class BaseRepository
         return $Model;
     }
 
-    public function fetch(string $phone, array $with = [], ?callable $callback = null)
+    public function fetch()
     {
         try {
             $rows =  $this->model();
-
-            if ($callback) {
-                $rows = $callback();
-            }
-
-            if ($with !== []) {
-                $rows = $rows->with($with);
-            }
-
-            $result = $rows->where('phone',$phone)->first();
+            $result = $rows->first();
         } catch (Exception $exception) {
             throw $exception;
         }
