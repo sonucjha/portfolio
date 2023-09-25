@@ -56,8 +56,8 @@ class BaseRepository
     public function fetch()
     {
         try {
-            $rows =  $this->model();
-            $result = $rows->first();
+            $row =  $this->model();
+            $result = $row->first();
         } catch (Exception $exception) {
             throw $exception;
         }
