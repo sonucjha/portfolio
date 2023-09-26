@@ -1,9 +1,9 @@
 <template>
   <ul class="sidebar-nav" id="sidebar-nav">
     <li class="nav-item">
-      <a class="nav-link collapsed hand" @click.stop="$root.changeRoute('/dashboard')">
+      <a class="nav-link collapsed hand" @click.stop="$root.changeRoute('/intro')">
         <i class="bi bi-grid"></i>
-        <span>Dashboard</span>
+        <span>Intro</span>
       </a>
     </li>
     <!-- End Dashboard Nav -->
