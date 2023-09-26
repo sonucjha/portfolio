@@ -53,15 +53,35 @@ class BaseRepository
         return $Model;
     }
 
-    public function fetch()
+    public function fetch($condition = null)
     {
         try {
-            $row =  $this->model();
-            $result = $row->first();
+            if ($condition != null) {
+                $row =  $this->model();
+                $result = $row->where($condition)->first();
+            } else {
+                $row =  $this->model();
+                $result = $row->first();
+            }
         } catch (Exception $exception) {
             throw $exception;
         }
 
         return $result;
+    }
+
+    public function delete($condition = null)
+    {
+        try {
+            if ($condition != null) {
+                $row =  $this->model();
+                $result = $row->where($condition)->delete();
+            } else {
+                $row =  $this->model();
+                $result = $row->delete();
+            }
+        } catch (Exception $exception) {
+            throw $exception;
+        }
     }
 }

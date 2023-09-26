@@ -5,44 +5,47 @@ namespace App\Http\Repositories;
 use App\Models\IntroModel;
 use App\Models\User;
 
-class UserRepository extends BaseRepository
+class IntroRepository extends BaseRepository
 {
-    protected $introRepository;
-
     public function __construct()
     {
         $this->Model = new IntroModel();
 
         $this->rules = [
-            "phone" => "required",
-            "name" => "sometimes",
-            "remember_token" => "sometimes"
+            "name" => "required",
+            "position" => "required",
+            "social" => "required"
         ];
     }
 
-    public function saveIntro(object $request, $otp)
+    public function saveIntro(object $request)
     {
-        $this->validateData($request);
-
-        // Insert into user table
-        $check_user = $this->fetch($request->phone);
-        if ($check_user) {
-            $check_user->remember_token = $otp;
-            $check_user->save();
+        $check = $this->fetch();
+        if ($check) {
+            return 'delete old  intro first';
         } else {
+            $this->validateData($request);
+
+            // Insert into info table
             $user_info = [
                 "name" => $request->name,
-                "phone" => $request->phone,
-                "password" => $request->password,
-                "remember_token" => $otp,
+                "position" => $request->position,
+                "social" => $request->social
             ];
 
-            $user = $this->store(
-                $user_info,
-                callback: function ($user) use ($request) {
-                    $this->callbackSaveOTP($request, $user);
-                }
-            );
+            $this->store($user_info);
         }
+    }
+
+    public function editIntro(Object $request){
+        $user_info = $this->fetch();
+        $user_info->name = $request->name;
+        $user_info->position = $request->position;
+        $user_info->social = $request->social;
+        $user_info->save();
+    }
+
+    public function deleteIntro(){
+        $this->delete();
     }
 }
