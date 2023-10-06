@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('about_sections', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('position');
-            $table->text('social');
+            $table->string('profile_pic');
+            $table->text('about');
+            $table->text('about_profile');
+            $table->text('about_skill');
+            $table->text('info_list');
+            $table->text('skill_bars');
+            $table->string('download_cv');
+            $table->string('business_email');
             $table->timestamps();
         });
     }
