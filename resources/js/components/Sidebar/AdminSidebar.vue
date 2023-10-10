@@ -1,7 +1,7 @@
 <template>
   <ul class="sidebar-nav" id="sidebar-nav">
     <li class="nav-item">
-      <a class="nav-link collapsed hand" @click.stop="$root.changeRoute('/intro')">
+      <a class="nav-link collapsed hand" @click.stop="changeRoute('/intro')">
         <i class="bi bi-grid"></i>
         <span>Intro</span>
       </a>
