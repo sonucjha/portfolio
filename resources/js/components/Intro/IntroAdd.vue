@@ -37,6 +37,7 @@
   </div>
 </template>
 <script setup>
+import axios from "axios"
 import { ref,reactive } from "vue";
 
 const user = ref({
@@ -56,7 +57,14 @@ const person = reactive({
 });
 
 function submit(){
-  alert('submit')
+  let formData = {}
+  formData['name'] = person.name
+  formData['position'] = person.position
+  formData['facebook'] = person.facebook
+  formData['twitter'] = person.twitter
+  formData['instagram'] = person.instagram
+  axios.post('/api/saveIntro',formData).then((response)=>{
+  })
 }
 
 function reset(){

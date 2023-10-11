@@ -6,6 +6,7 @@ import router from './router'
 import App from './components/App.vue'
 import MainComponent from "./components/Dashboard/Main.vue"
 import common from './common'
+// import axios from 'axios'
 
 const pinia = createPinia()
 
@@ -15,5 +16,6 @@ app.component("mainComponent", MainComponent)
 
 app.use(pinia)
 app.use(router)
+// app.use(axios)
 app.mixin(common)
 app.mount('.page-wrapper')
