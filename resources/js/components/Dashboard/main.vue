@@ -40,7 +40,7 @@
                 <div
                     class="bd-callout bd-callout-info text-uppercase d-flex justify-content-between"
                 >
-                    <strong> {{ "Dashboard " }}</strong>
+                    <!-- <strong> {{ "Dashboard " }}</strong> -->
                     <span class="text-capitalize">{{}}</span>
                 </div>
 
