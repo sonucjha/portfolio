@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('position');
-            $table->text('social');
+            $table->text('facebook');
+            $table->text('twitter');
+            $table->text('instagram');
             $table->timestamps();
         });
     }
