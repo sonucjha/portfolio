@@ -49,11 +49,11 @@ const user = ref({
 })
 
 const person = reactive({
-  name: 'Albert',
-  position:'',
-  facebook:'',
-  twitter:'',
-  instagram:''
+  name: 'Nabnit Jha',
+  position:'BusinessMan',
+  facebook:'kripaljhason',
+  twitter:'sonucjha',
+  instagram:'iammammasboy'
 });
 
 function submit(){
