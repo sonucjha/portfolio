@@ -20,6 +20,24 @@ const router = createRouter({
             component: () => import("./views/Intro/IntroEditView.vue"),
         },
         // Intro routes end
+
+         // About routes start
+         {
+            path: "/about",
+            name: "about",
+            component: () => import("./views/About/AboutView.vue"),
+        },
+        {
+            path: "/about-add",
+            name: "aboutAdd",
+            component: () => import("./views/About/AboutAddView.vue"),
+        },
+        {
+            path: "/about-edit",
+            name: "aboutEdit",
+            component: () => import("./views/About/AboutEditView.vue"),
+        },
+        // About routes end
     ],
 });
 
