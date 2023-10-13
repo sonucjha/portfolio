@@ -21,3 +21,11 @@
     color: #ffff;
     border-radius: 50%;
  }
+ .hand{
+   color: #4e4e4e!important;
+   cursor: pointer!important;
+ }
+
+ .hand::hov{
+   color: #4e4e4e!important;
+ }

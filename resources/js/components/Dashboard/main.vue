@@ -49,7 +49,7 @@
             </div>
             <!-- End Page Title -->
 
-            <section class="section dashboard profile">
+            <section class="section dashboard profile d-flex justify-content-between">
                 <!-- start main center area -->
                 <router-view></router-view>
                 <!-- end main center area -->
