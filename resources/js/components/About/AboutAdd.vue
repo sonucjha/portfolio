@@ -6,7 +6,7 @@
           <h5 class="card-title">Profile Image</h5>
 
           <!-- Vertical Form -->
-          <form class="row g-3" @submit.prevent="submit" @reset.stop="reset">
+          <form class="row g-3" @submit.prevent="ImageSubmit" @reset.stop="ImageReset">
             <div class="col-12">
               <input class="form-control" type="file" id="formFile" />
             </div>
@@ -25,7 +25,7 @@
           <h5 class="card-title">CV</h5>
 
           <!-- Vertical Form -->
-          <form class="row g-3" @submit.prevent="submit" @reset.stop="reset">
+          <form class="row g-3" @submit.prevent="CVSubmit" @reset.stop="CVReset">
             <div class="col-12">
               <input class="form-control" type="file" id="formFile" />
             </div>
@@ -45,7 +45,7 @@
           <h5 class="card-title">About</h5>
 
           <!-- Vertical Form -->
-          <form class="row g-3" @submit.prevent="submit" @reset.stop="reset">
+          <form class="row g-3" @submit.prevent="AboutSubmit" @reset.stop="AboutReset">
             <div class="col-12">
               <textarea rows="5" class="form-control" cols="5"></textarea>
             </div>
@@ -85,8 +85,7 @@
             />
           </div>
           <div class="col-12">
-            <label for="earning_mode" class="form-label"
-              >Earning Mode </label>
+            <label for="earning_mode" class="form-label">Earning Mode </label>
             <input
               type="text"
               class="form-control"
@@ -95,8 +94,7 @@
             />
           </div>
           <div class="col-12">
-            <label for="website" class="form-label"
-              >WEBSITE</label>
+            <label for="website" class="form-label">WEBSITE</label>
             <input
               type="text"
               class="form-control"
@@ -105,14 +103,8 @@
             />
           </div>
           <div class="col-12">
-            <label for="email" class="form-label"
-              >EMAIL</label>
-            <input
-              type="text"
-              class="form-control"
-              id="email"
-              v-model="person.email"
-            />
+            <label for="email" class="form-label">EMAIL</label>
+            <input type="text" class="form-control" id="email" v-model="person.email" />
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -137,28 +129,88 @@
 
           <div class="col-12">
             <label for="skill_1" class="form-label">Skill-1</label>
-            <input type="text" class="form-control col-10" id="skill_1"  placeholder="skill name" v-model="person.skill_1" />
-            <input type="number" class="form-control col-2" id="skill_1_level" placeholder="skill level" v-model="person.skill_1_level" />
+            <input
+              type="text"
+              class="form-control col-10"
+              id="skill_1"
+              placeholder="skill name"
+              v-model="person.skill_1"
+            />
+            <input
+              type="number"
+              class="form-control col-2"
+              id="skill_1_level"
+              placeholder="skill level"
+              v-model="person.skill_1_level"
+            />
           </div>
           <div class="col-12">
             <label for="skill_2" class="form-label">Skill-2</label>
-            <input type="text" class="form-control col-10" id="skill_2" placeholder="skill name" v-model="person.skill_2" />
-            <input type="number" class="form-control col-2" id="skill_2_level" placeholder="skill level" v-model="person.skill_2_level" />
+            <input
+              type="text"
+              class="form-control col-10"
+              id="skill_2"
+              placeholder="skill name"
+              v-model="person.skill_2"
+            />
+            <input
+              type="number"
+              class="form-control col-2"
+              id="skill_2_level"
+              placeholder="skill level"
+              v-model="person.skill_2_level"
+            />
           </div>
           <div class="col-12">
             <label for="skill_3" class="form-label">Skill-3</label>
-            <input type="text" class="form-control col-10" id="skill_3" placeholder="skill name" v-model="person.skill_3" />
-            <input type="number" class="form-control col-2" id="skill_3_level" placeholder="skill level" v-model="person.skill_3_level" />
+            <input
+              type="text"
+              class="form-control col-10"
+              id="skill_3"
+              placeholder="skill name"
+              v-model="person.skill_3"
+            />
+            <input
+              type="number"
+              class="form-control col-2"
+              id="skill_3_level"
+              placeholder="skill level"
+              v-model="person.skill_3_level"
+            />
           </div>
           <div class="col-12">
             <label for="skill_4" class="form-label">Skill-4</label>
-            <input type="text" class="form-control col-10" id="skill_4" placeholder="skill name" v-model="person.skill_4" />
-            <input type="number" class="form-control col-2" id="skill_4_level" placeholder="skill level" v-model="person.skill_4_level" />
+            <input
+              type="text"
+              class="form-control col-10"
+              id="skill_4"
+              placeholder="skill name"
+              v-model="person.skill_4"
+            />
+            <input
+              type="number"
+              class="form-control col-2"
+              id="skill_4_level"
+              placeholder="skill level"
+              v-model="person.skill_4_level"
+            />
           </div>
           <div class="col-12">
             <label for="skill_5" class="form-label">Skill-5</label>
-            <input type="text" class="form-control col-10" id="skill_5" placeholder="skill name" v-model="person.skill_5" />
-            <input type="number" class="form-control col-2" id="skill_5_level" placeholder="skill level" v-model="person.skill_5_level" />
+            <input
+              type="text"
+              class="form-control col-10"
+              id="skill_5"
+              placeholder="skill name"
+              v-model="person.skill_5"
+            />
+            <input
+              type="number"
+              class="form-control col-2"
+              id="skill_5_level"
+              placeholder="skill level"
+              v-model="person.skill_5_level"
+            />
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -191,6 +243,66 @@ const person = reactive({
 });
 
 function submit() {
+  let formData = {};
+  formData["name"] = person.name;
+  formData["position"] = person.position;
+  formData["facebook"] = person.facebook;
+  formData["twitter"] = person.twitter;
+  formData["instagram"] = person.instagram;
+  axios.post("/api/saveIntro", formData).then((response) => {});
+}
+
+function ImageSubmit() {
+  let formData = {};
+  formData["name"] = person.name;
+  formData["position"] = person.position;
+  formData["facebook"] = person.facebook;
+  formData["twitter"] = person.twitter;
+  formData["instagram"] = person.instagram;
+  axios.post("/api/saveIntro", formData).then((response) => {});
+}
+
+function ImageReset() {
+  let formData = {};
+  formData["name"] = person.name;
+  formData["position"] = person.position;
+  formData["facebook"] = person.facebook;
+  formData["twitter"] = person.twitter;
+  formData["instagram"] = person.instagram;
+  axios.post("/api/saveIntro", formData).then((response) => {});
+}
+
+function CVSubmit() {
+  let formData = {};
+  formData["name"] = person.name;
+  formData["position"] = person.position;
+  formData["facebook"] = person.facebook;
+  formData["twitter"] = person.twitter;
+  formData["instagram"] = person.instagram;
+  axios.post("/api/saveIntro", formData).then((response) => {});
+}
+
+function CVReset() {
+  let formData = {};
+  formData["name"] = person.name;
+  formData["position"] = person.position;
+  formData["facebook"] = person.facebook;
+  formData["twitter"] = person.twitter;
+  formData["instagram"] = person.instagram;
+  axios.post("/api/saveIntro", formData).then((response) => {});
+}
+
+function AboutSubmit() {
+  let formData = {};
+  formData["name"] = person.name;
+  formData["position"] = person.position;
+  formData["facebook"] = person.facebook;
+  formData["twitter"] = person.twitter;
+  formData["instagram"] = person.instagram;
+  axios.post("/api/saveIntro", formData).then((response) => {});
+}
+
+function AboutReset() {
   let formData = {};
   formData["name"] = person.name;
   formData["position"] = person.position;
