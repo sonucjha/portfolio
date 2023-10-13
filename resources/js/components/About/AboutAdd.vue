@@ -67,49 +67,51 @@
         <!-- Vertical Form -->
         <form class="row g-3" @submit.prevent="submit" @reset.stop="reset">
           <div class="col-12">
-            <label for="name" class="form-label">Name</label>
+            <label for="profile" class="form-label">Profile</label>
+            <textarea rows="5" class="form-control" cols="5"></textarea>
+          </div>
+
+          <div class="col-12">
+            <label for="name" class="form-label">Full Name</label>
             <input type="text" class="form-control" id="name" v-model="person.name" />
           </div>
           <div class="col-12">
-            <label for="position" class="form-label">Position</label>
+            <label for="birth_date" class="form-label">BIRTH DATE</label>
             <input
-              type="text"
+              type="date"
               class="form-control"
-              id="position"
-              v-model="person.position"
+              id="birth_date"
+              v-model="person.birth_date"
             />
           </div>
           <div class="col-12">
-            <label for="Facebook" class="form-label"
-              >Facebook <i class="bi bi-facebook"></i
-            ></label>
+            <label for="earning_mode" class="form-label"
+              >Earning Mode </label>
             <input
               type="text"
               class="form-control"
-              id="facebook"
-              v-model="person.facebook"
+              id="earning_mode"
+              v-model="person.earning_mode"
             />
           </div>
           <div class="col-12">
-            <label for="twitter" class="form-label"
-              >Twitter <i class="bi bi-twitter"></i
-            ></label>
+            <label for="website" class="form-label"
+              >WEBSITE</label>
             <input
               type="text"
               class="form-control"
-              id="twitter"
-              v-model="person.twitter"
+              id="website"
+              v-model="person.website"
             />
           </div>
           <div class="col-12">
-            <label for="instagram" class="form-label"
-              >Instagram <i class="bi bi-instagram"></i
-            ></label>
+            <label for="email" class="form-label"
+              >EMAIL</label>
             <input
               type="text"
               class="form-control"
-              id="instagram"
-              v-model="person.instagram"
+              id="email"
+              v-model="person.email"
             />
           </div>
           <div class="text-center">
@@ -121,58 +123,42 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-3">
+  <div class="col-lg-4">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Introduction</h5>
+        <h5 class="card-title">SKILLS</h5>
 
         <!-- Vertical Form -->
         <form class="row g-3" @submit.prevent="submit" @reset.stop="reset">
           <div class="col-12">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" v-model="person.name" />
+            <label for="skill`1" class="form-label">About Skill</label>
+            <textarea rows="5" class="form-control" cols="5"></textarea>
+          </div>
+
+          <div class="col-12">
+            <label for="skill_1" class="form-label">Skill-1</label>
+            <input type="text" class="form-control col-10" id="skill_1"  placeholder="skill name" v-model="person.skill_1" />
+            <input type="number" class="form-control col-2" id="skill_1_level" placeholder="skill level" v-model="person.skill_1_level" />
           </div>
           <div class="col-12">
-            <label for="position" class="form-label">Position</label>
-            <input
-              type="text"
-              class="form-control"
-              id="position"
-              v-model="person.position"
-            />
+            <label for="skill_2" class="form-label">Skill-2</label>
+            <input type="text" class="form-control col-10" id="skill_2" placeholder="skill name" v-model="person.skill_2" />
+            <input type="number" class="form-control col-2" id="skill_2_level" placeholder="skill level" v-model="person.skill_2_level" />
           </div>
           <div class="col-12">
-            <label for="Facebook" class="form-label"
-              >Facebook <i class="bi bi-facebook"></i
-            ></label>
-            <input
-              type="text"
-              class="form-control"
-              id="facebook"
-              v-model="person.facebook"
-            />
+            <label for="skill_3" class="form-label">Skill-3</label>
+            <input type="text" class="form-control col-10" id="skill_3" placeholder="skill name" v-model="person.skill_3" />
+            <input type="number" class="form-control col-2" id="skill_3_level" placeholder="skill level" v-model="person.skill_3_level" />
           </div>
           <div class="col-12">
-            <label for="twitter" class="form-label"
-              >Twitter <i class="bi bi-twitter"></i
-            ></label>
-            <input
-              type="text"
-              class="form-control"
-              id="twitter"
-              v-model="person.twitter"
-            />
+            <label for="skill_4" class="form-label">Skill-4</label>
+            <input type="text" class="form-control col-10" id="skill_4" placeholder="skill name" v-model="person.skill_4" />
+            <input type="number" class="form-control col-2" id="skill_4_level" placeholder="skill level" v-model="person.skill_4_level" />
           </div>
           <div class="col-12">
-            <label for="instagram" class="form-label"
-              >Instagram <i class="bi bi-instagram"></i
-            ></label>
-            <input
-              type="text"
-              class="form-control"
-              id="instagram"
-              v-model="person.instagram"
-            />
+            <label for="skill_5" class="form-label">Skill-5</label>
+            <input type="text" class="form-control col-10" id="skill_5" placeholder="skill name" v-model="person.skill_5" />
+            <input type="number" class="form-control col-2" id="skill_5_level" placeholder="skill level" v-model="person.skill_5_level" />
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
