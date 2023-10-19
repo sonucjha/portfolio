@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('profile_pic')->nullable();
             $table->text('about')->nullable();
             $table->text('about_profile')->nullable();
+            $table->text('file_path')->nullable();
             $table->text('about_skill')->nullable();
             $table->text('info_list')->nullable();
             $table->text('skill_bars')->nullable();
