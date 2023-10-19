@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -30,3 +31,4 @@ Route::group([
 });
 
 Route::post('saveIntro', [IntroController::class, 'saveIntro']);
+Route::post('saveUserImage', [AboutController::class, 'saveUserImage']);
