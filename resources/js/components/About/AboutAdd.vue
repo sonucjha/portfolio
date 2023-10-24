@@ -25,6 +25,9 @@
               <button type="reset" class="btn btn-secondary">Reset</button>
             </div>
           </form>
+          <div>
+            <img @src="userImage">
+          </div>
           <!-- Vertical Form -->
         </div>
       </div>
@@ -214,12 +217,14 @@
 </template>
 <script setup>
 import axios from "axios";
-import { ref, reactive } from "vue";
+import { ref, onMounted } from "vue";
 
 const user = ref({
   image: "",
   cv: "",
 });
+
+const userImage = ref('')
 
 function onImageChange(e) {
   user.value.image = e.target.files[0];
@@ -234,10 +239,19 @@ function submit() {
   axios.post("/api/saveIntro", formData).then((response) => {});
 }
 
+function getUserImage(){
+  // ../../../../public/storage/public
+  axios.get("/api/getUserImage", formData).then((response) => {
+    userImage.value = '../../../../public/storage/public/'+response.data
+  });
+}
+
 function ImageSubmit() {
   const formData = new FormData();
   formData.append('userImage', user.value.image);
-  axios.post("/api/saveUserImage", formData).then((response) => {});
+  axios.post("/api/saveUserImage", formData).then((response) => {
+    getUserImage();
+  });
 }
 
 function ImageReset() {
@@ -268,4 +282,8 @@ function AboutReset() {
 function reset() {
   alert("reset");
 }
+
+onMounted(() => {
+  getUserImage()
+})
 </script>

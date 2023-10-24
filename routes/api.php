@@ -32,3 +32,4 @@ Route::group([
 
 Route::post('saveIntro', [IntroController::class, 'saveIntro']);
 Route::post('saveUserImage', [AboutController::class, 'saveUserImage']);
+Route::get('getUserImage', [AboutController::class, 'getUserImage']);
