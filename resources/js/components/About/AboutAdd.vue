@@ -25,8 +25,8 @@
               <button type="reset" class="btn btn-secondary">Reset</button>
             </div>
           </form>
-          <div>
-            <img @src="userImage">
+          <div class="d-flex justify-content-center">
+            <img :src="userImage" class="img-circle">
           </div>
           <!-- Vertical Form -->
         </div>
@@ -241,8 +241,8 @@ function submit() {
 
 function getUserImage(){
   // ../../../../public/storage/public
-  axios.get("/api/getUserImage", formData).then((response) => {
-    userImage.value = '../../../../public/storage/public/'+response.data
+  axios.get("/api/getUserImage").then((response) => {
+    userImage.value = 'http://127.0.0.1:8000/storage/profile_pic/'+response.data
   });
 }
 
@@ -280,7 +280,6 @@ function AboutReset() {
 }
 
 function reset() {
-  alert("reset");
 }
 
 onMounted(() => {

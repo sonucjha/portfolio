@@ -11,8 +11,9 @@ class AboutController extends Controller
     {
         $about = new About();
         $fileName = time() . '_' . $request->file('userImage')->getClientOriginalName();
-        $filePath = $request->file('userImage')->storeAs('public/storage/uploads/profile_pic', $fileName, 'public');
-        $about->profile_pic = time() . '_' . $request->file('userImage')->getClientOriginalName();
+        $extension = $request->file('userImage')->extension();
+        $filePath = $request->file('userImage')->storeAs('profile_pic', $fileName, 'public');
+        $about->profile_pic = $fileName;
         $about->file_path =  $filePath;
         $about->save();
         return back()
